@@ -1,0 +1,8 @@
+version: '3'
+services:
+  db:
+    build: .
+    volumes: # 適宜読み込みたいファイル名に変える
+      - ./init:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
